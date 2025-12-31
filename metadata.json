@@ -1,0 +1,5 @@
+{
+  "name": "Lumina Flipbook",
+  "description": "An immersive 3D-like PDF reading experience with realistic page-flip animations, sound effects, and an integrated Gemini AI assistant for content analysis.",
+  "requestFramePermissions": []
+}
