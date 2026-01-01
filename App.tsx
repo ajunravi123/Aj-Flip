@@ -224,20 +224,18 @@ const App: React.FC = () => {
                 </button>
              </div>
 
-             {/* Separate Hand/Drag Mode Button - Only show when zoomed */}
-             {zoom > 1 && (
-               <button 
-                 onClick={() => setIsDragMode(!isDragMode)}
-                 className={`p-2.5 md:p-3 rounded-2xl transition-all border backdrop-blur-xl ${
-                   isDragMode 
-                     ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/20 border-indigo-500/50' 
-                     : 'bg-white/5 text-stone-400 hover:text-white border-white/5 hover:bg-white/10'
-                 }`}
-                 title={isDragMode ? "Disable drag mode" : "Enable drag mode"}
-               >
-                 <LucideHand size={18} />
-               </button>
-             )}
+             {/* Separate Hand/Drag Mode Button - Always visible */}
+             <button 
+               onClick={() => setIsDragMode(!isDragMode)}
+               className={`p-2.5 md:p-3 rounded-2xl transition-all border backdrop-blur-xl ${
+                 isDragMode 
+                   ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/20 border-indigo-500/50' 
+                   : 'bg-white/5 text-stone-400 hover:text-white border-white/5 hover:bg-white/10'
+               }`}
+               title={isDragMode ? "Disable drag mode" : "Enable drag mode"}
+             >
+               <LucideHand size={18} />
+             </button>
              
              <div className="flex items-center bg-white/5 rounded-2xl p-1 border border-white/5 backdrop-blur-xl">
                 <button onClick={() => setZoom(prev => Math.max(0.5, prev - 0.2))} className="p-2 text-stone-400 hover:text-white transition-colors"><LucideMinus size={14}/></button>
