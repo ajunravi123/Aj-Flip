@@ -241,11 +241,18 @@ const App: React.FC = () => {
                 <button onClick={() => setZoom(prev => Math.max(0.5, prev - 0.2))} className="p-2 text-stone-400 hover:text-white transition-colors"><LucideMinus size={14}/></button>
                 <span className="px-2 text-[10px] font-bold font-mono min-w-[35px] text-center text-white/60">{Math.round(zoom * 100)}%</span>
                 <button onClick={() => setZoom(prev => Math.min(3, prev + 0.2))} className="p-2 text-stone-400 hover:text-white transition-colors"><LucidePlus size={14}/></button>
-                {zoom !== 1 && (
-                  <button onClick={handleResetView} className="p-2 ml-1 bg-indigo-500/10 hover:bg-indigo-500/20 rounded-lg text-indigo-400 transition-all active:scale-90" title="Reset View">
-                    <LucideRefreshCcw size={14} />
-                  </button>
-                )}
+                <button 
+                  onClick={handleResetView} 
+                  className={`p-2 ml-1 rounded-lg transition-all active:scale-90 ${
+                    zoom !== 1 
+                      ? 'bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-400' 
+                      : 'bg-white/5 hover:bg-white/10 text-stone-400 hover:text-white'
+                  }`}
+                  title="Reset View"
+                  disabled={zoom === 1}
+                >
+                  <LucideRefreshCcw size={14} />
+                </button>
              </div>
 
              <button 
